@@ -1,0 +1,13 @@
+name: Example workflow for Code Push action
+on: [push]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@2.3.4
+      - name: codepush production release ios
+        uses: ./
+        with: 
+          command: code-push release-react CodePushReactNativeDemo-ios ios -d Production
+          token: Test Token
