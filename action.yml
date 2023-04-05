@@ -16,5 +16,6 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.command }}
+    - ${{ inputs.serverUrl }}
     - ${{ inputs.token }}
 
