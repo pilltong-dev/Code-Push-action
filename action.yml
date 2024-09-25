@@ -1,21 +1,21 @@
-name: 'CodePush CLI'
-description: 'GitHub Action for any Code Push CLI command'
-author: 'Doctornow'
-inputs: 
+name: "CodePush CLI"
+description: "GitHub Action for any Code Push CLI command"
+author: "Doctornow"
+inputs:
   command:
-    description: 'The Code Push CLI command'
-    required: true 
+    description: "The Code Push CLI command"
+    required: true
   token:
-    description: 'Code Push API Token'
-    required: true 
+    description: "Code Push API Token"
+    required: true
 branding:
-  color: 'red' 
-  icon: 'send'
+  color: "red"
+  icon: "send"
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
   args:
     - ${{ inputs.command }}
     - ${{ inputs.serverUrl }}
     - ${{ inputs.token }}
-
+    - ${{ inputs.workingDirectory }}
